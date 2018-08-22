@@ -42,7 +42,7 @@
 #define LISTENQ 2
 const int CONNECTED_BIT = BIT0;
 
-unsigned char g_light_command = 255;
+unsigned char g_light_command = 1;
 
 /* FreeRTOS event group to signal when we are connected*/
 static EventGroupHandle_t wifi_event_group;
@@ -292,16 +292,16 @@ void white_w_brightness(apa102 &oAPA, uint8_t blevel) {
     report_counter += 1;
 
     if (report_counter > 5) {
-        ESP_LOGI(TAG, "setting all white, with brightness %d", blevel);
+        ESP_LOGI(TAG, "setting all white, with brightness %d. LALA", blevel);
         report_counter = 0;
     }
 
     apa102::colorRGBB color;
 
-    color.red=255;
-    color.green=255;
-    color.blue=255;
-    color.brightness=blevel;
+    color.red=blevel;
+    color.green=blevel;
+    color.blue=blevel;
+    color.brightness=31; //31 is the max brightness (secondary low freq PWM on apa102)
 
     oAPA.setColor(color);
 

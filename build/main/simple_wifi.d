@@ -1,22 +1,5 @@
 simple_wifi.o: /home/muntahi/esp/simple_wifi/main/simple_wifi.cpp \
- /home/muntahi/esp/esp-idf/components/newlib/include/string.h \
- /home/muntahi/esp/esp-idf/components/newlib/include/_ansi.h \
- /home/muntahi/esp/esp-idf/components/newlib/include/newlib.h \
- /home/muntahi/esp/esp-idf/components/newlib/include/sys/config.h \
- /home/muntahi/esp/esp-idf/components/newlib/include/machine/ieeefp.h \
- /home/muntahi/esp/esp-idf/components/newlib/include/sys/features.h \
- /home/muntahi/esp/esp-idf/components/esp32/include/xtensa/config/core-isa.h \
- /home/muntahi/esp/esp-idf/components/newlib/include/sys/reent.h \
- /home/muntahi/esp/esp-idf/components/newlib/include/_ansi.h \
- /home/muntahi/esp/esp-idf/components/newlib/include/sys/_types.h \
- /home/muntahi/esp/esp-idf/components/newlib/include/machine/_types.h \
- /home/muntahi/esp/esp-idf/components/newlib/include/machine/_default_types.h \
- /home/muntahi/esp/esp-idf/components/newlib/include/sys/lock.h \
- /home/muntahi/esp/esp-idf/components/newlib/include/sys/cdefs.h \
- /home/muntahi/esp/esp-idf/components/newlib/include/sys/string.h \
  /home/muntahi/esp/esp-idf/components/freertos/include/freertos/FreeRTOS.h \
- /home/muntahi/esp/esp-idf/components/newlib/include/stdint.h \
- /home/muntahi/esp/esp-idf/components/newlib/include/sys/_intsup.h \
  /home/muntahi/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h \
  /home/muntahi/esp/simple_wifi/build/include/sdkconfig.h \
  /home/muntahi/esp/esp-idf/components/freertos/include/freertos/xtensa_config.h \
@@ -47,9 +30,6 @@ simple_wifi.o: /home/muntahi/esp/simple_wifi/main/simple_wifi.cpp \
  /home/muntahi/esp/esp-idf/components/esp32/include/esp_crosscore_int.h \
  /home/muntahi/esp/esp-idf/components/esp32/include/esp_timer.h \
  /home/muntahi/esp/esp-idf/components/newlib/include/stdio.h \
- /home/muntahi/esp/esp-idf/components/newlib/include/sys/types.h \
- /home/muntahi/esp/esp-idf/components/newlib/include/machine/types.h \
- /home/muntahi/esp/esp-idf/components/newlib/include/sys/sched.h \
  /home/muntahi/esp/esp-idf/components/newlib/include/sys/stdio.h \
  /home/muntahi/esp/esp-idf/components/esp32/include/esp_err.h \
  /home/muntahi/esp/esp-idf/components/heap/include/esp_heap_caps.h \
@@ -96,12 +76,6 @@ simple_wifi.o: /home/muntahi/esp/simple_wifi/main/simple_wifi.cpp \
  /home/muntahi/esp/esp-idf/components/lwip/include/lwip/lwip/ip_addr.h \
  /home/muntahi/esp/esp-idf/components/lwip/include/lwip/lwip/opt.h \
  /home/muntahi/esp/esp-idf/components/lwip/include/lwip/port/lwipopts.h \
- /home/muntahi/esp/esp-idf/components/newlib/platform_include/time.h \
- /home/muntahi/esp/esp-idf/components/newlib/include/time.h \
- /home/muntahi/esp/esp-idf/components/newlib/include/machine/time.h \
- /home/muntahi/esp/esp-idf/components/newlib/include/unistd.h \
- /home/muntahi/esp/esp-idf/components/newlib/platform_include/sys/unistd.h \
- /home/muntahi/esp/esp-idf/components/newlib/include/sys/unistd.h \
  /home/muntahi/esp/esp-idf/components/newlib/include/sys/time.h \
  /home/muntahi/esp/esp-idf/components/newlib/include/sys/fcntl.h \
  /home/muntahi/esp/esp-idf/components/newlib/include/sys/_default_fcntl.h \
@@ -135,41 +109,7 @@ simple_wifi.o: /home/muntahi/esp/simple_wifi/main/simple_wifi.cpp \
  /home/muntahi/esp/esp-idf/components/lwip/include/lwip/lwip/inet.h \
  /home/muntahi/esp/simple_wifi/main/apa102.h
 
-/home/muntahi/esp/esp-idf/components/newlib/include/string.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/include/_ansi.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/include/newlib.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/include/sys/config.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/include/machine/ieeefp.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/include/sys/features.h:
-
-/home/muntahi/esp/esp-idf/components/esp32/include/xtensa/config/core-isa.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/include/sys/reent.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/include/_ansi.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/include/sys/_types.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/include/machine/_types.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/include/machine/_default_types.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/include/sys/lock.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/include/sys/cdefs.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/include/sys/string.h:
-
 /home/muntahi/esp/esp-idf/components/freertos/include/freertos/FreeRTOS.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/include/stdint.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/include/sys/_intsup.h:
 
 /home/muntahi/esp/esp-idf/components/freertos/include/freertos/FreeRTOSConfig.h:
 
@@ -230,12 +170,6 @@ simple_wifi.o: /home/muntahi/esp/simple_wifi/main/simple_wifi.cpp \
 /home/muntahi/esp/esp-idf/components/esp32/include/esp_timer.h:
 
 /home/muntahi/esp/esp-idf/components/newlib/include/stdio.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/include/sys/types.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/include/machine/types.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/include/sys/sched.h:
 
 /home/muntahi/esp/esp-idf/components/newlib/include/sys/stdio.h:
 
@@ -328,18 +262,6 @@ simple_wifi.o: /home/muntahi/esp/simple_wifi/main/simple_wifi.cpp \
 /home/muntahi/esp/esp-idf/components/lwip/include/lwip/lwip/opt.h:
 
 /home/muntahi/esp/esp-idf/components/lwip/include/lwip/port/lwipopts.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/platform_include/time.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/include/time.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/include/machine/time.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/include/unistd.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/platform_include/sys/unistd.h:
-
-/home/muntahi/esp/esp-idf/components/newlib/include/sys/unistd.h:
 
 /home/muntahi/esp/esp-idf/components/newlib/include/sys/time.h:
 

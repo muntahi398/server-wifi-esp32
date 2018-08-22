@@ -6,7 +6,8 @@
    software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
    CONDITIONS OF ANY KIND, either express or implied.
 */
-#include <string.h>
+#include <cstring>
+#include <string>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/event_groups.h"
@@ -43,7 +44,7 @@
 const int CONNECTED_BIT = BIT0;
 
 //unsigned char g_light_command = 255;
-int g_light_command = 255;
+uint8_t g_light_command = 1;
 
 /* FreeRTOS event group to signal when we are connected*/
 static EventGroupHandle_t wifi_event_group;
@@ -179,45 +180,46 @@ void tcp_server(void *pvParam){
         //perror("setsockopt(SO_REUSEADDR) failed");
   //https://stackoverflow.com/questions/24194961/how-do-i-use-setsockoptso-reuseaddr/25193462
         ESP_LOGI(TAG,"setsockopt(SO_REUSEADDR) failed");
+
+        std::string conn_msg("IAI ringlight controller.\n");
+
         while(1){
-            cs=accept(s,(struct sockaddr *)&remote_addr, &socklen);
-            ESP_LOGI(TAG,"New connection request,Request data:");
+            cs = accept(s, (struct sockaddr *)&remote_addr, &socklen);
+            ESP_LOGI(TAG, "New connection request, Request data:");
             //set O_NONBLOCK so that recv will return, otherwise we need to implement message end
             //detection logic. If know the client message format you should instead implement logic
             //detect the end of message
             bool first_byte_recorded = false;
             char second_byte, first_byte = 'x';
 
-            write(cs , "Hello, congrats, server conn is on, send data \n <" , 45); //strlen(recv_buf)
-            write(cs , " \n <\n" , 5);
+
+            write(cs, conn_msg.c_str(), conn_msg.length()) ;
+
 
 
             //mnk-------------
             char *answer[50];
             bzero(recv_buf, sizeof(recv_buf));
-            while( (r = recv(cs , recv_buf , 3 , 0)) > 0 ) //2000
+            while( (r = recv(cs , recv_buf , sizeof(recv_buf) , 0)) > 0 )
             {
 
                 first_byte = recv_buf[0];
                 second_byte = recv_buf[1];
-
-                ESP_LOGI(TAG,"recieved=%d ,  r= %d", (first_byte -'0'),r);
+                if (second_byte == 'x'){
+                    write(cs , "goodbye, connection ending <\n " , 27);
+                    close(cs);
+                    break;
+                }
+                ESP_LOGI(TAG,"received=%d ,  r= %d", (first_byte -'0'),r);
                 if (first_byte >= '0' && first_byte <= '9')  //  '0' = 48   '9' = 58
                 {
-                    g_light_command = (first_byte -'0')*29;
-                    if (g_light_command>255)
-                    {g_light_command=255;
+                    g_light_command = (first_byte -'0')*28;
+                    if (first_byte == '9') {
+                        g_light_command=255;
                     }
-                    ESP_LOGI(TAG,);
-                }
-                else{
-                    //g_light_command =255;
-                    ESP_LOGI(TAG,"out of range input");
-                    write(cs , "out of range, not changing\n<" , 28);
-                }
-
-
-
+                
+                
+                
                 ESP_LOGI(TAG,"In loop Setting light to: %i\n", g_light_command);
                 bzero(answer, sizeof(answer));
                 snprintf((char*)answer, sizeof(answer) - 1, "Setting light to: %i\n", g_light_command);
@@ -228,11 +230,20 @@ void tcp_server(void *pvParam){
                     close(cs);
                     vTaskDelay(50 / portTICK_PERIOD_MS);
                     continue;
+                }                
+                
+                
                 }
-                if (second_byte == 'x'){
-                    write(cs , "goodbye, connection ending <\n " , 27);
-                    break;
+                else{
+                    //g_light_command =255;
+                    ESP_LOGI(TAG,"out of range input");
+                    write(cs , "out of range, not changing\n<" , 28);
                 }
+
+
+
+
+
 
 
                 //Send the message back to client
@@ -256,16 +267,16 @@ void white_w_brightness(apa102 &oAPA, uint8_t blevel) {
     report_counter += 1;
 
     if (report_counter > 5) {
-        ESP_LOGI(TAG, "setting all white, with brightness %d", blevel);
+        ESP_LOGI(TAG, "setting all white, with brightness %d. XXX", blevel);
         report_counter = 0;
     }
 
     apa102::colorRGBB color;
 
-    color.red=255;
-    color.green=255;
-    color.blue=255;
-    color.brightness=blevel;
+    color.red=blevel;
+    color.green=blevel;
+    color.blue=blevel;
+    color.brightness=31; //31 is the max brightness for apa102 in the slow PWM
 
     oAPA.setColor(color);
 

@@ -449,10 +449,10 @@ void apa102::white_w_brightness(uint8_t blevel) {
 
 	colorRGBB color;
 
-	color.red=255;
-	color.green=255;
-	color.blue=255;
-	color.brightness=blevel;
+	color.red=blevel;
+	color.green=blevel;
+	color.blue=blevel;
+	color.brightness=31;
 
 	setColor(color);
 	vTaskDelay(250/portTICK_PERIOD_MS);

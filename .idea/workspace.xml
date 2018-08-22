@@ -11,7 +11,17 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="776312e6-7bb4-4c80-81d0-7c162f170744" name="Default" comment="" />
+    <list default="true" id="776312e6-7bb4-4c80-81d0-7c162f170744" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/libmain.a" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/libmain.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/simple_wifi.d" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/simple_wifi.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/main/simple_wifi.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/main/simple_wifi.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/simple_wifi.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/simple_wifi.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/simple_wifi.elf" beforeDir="false" afterPath="$PROJECT_DIR$/build/simple_wifi.elf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/simple_wifi.map" beforeDir="false" afterPath="$PROJECT_DIR$/build/simple_wifi.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/simple_wifi.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main/simple_wifi.cpp" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,10 +35,10 @@
       <file leaf-file-name="simple_wifi.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main/simple_wifi.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="555">
-              <caret line="232" column="60" selection-start-line="232" selection-start-column="60" selection-end-line="232" selection-end-column="60" />
+            <state relative-caret-position="705">
+              <caret line="230" column="30" lean-forward="true" selection-start-line="230" selection-start-column="30" selection-end-line="230" selection-end-column="30" />
               <folding>
-                <element signature="e#299#318#0" expanded="true" />
+                <element signature="e#299#317#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -73,7 +83,11 @@
       <find>MAX_COLORS</find>
       <find>first_byte_recorded</find>
       <find>vTaskDelay</find>
+      <find>Hello</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -103,6 +117,7 @@
     <option name="width" value="1441" />
     <option name="height" value="1000" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -191,12 +206,14 @@
       <workItem from="1523024271858" duration="11748000" />
       <workItem from="1533639645739" duration="10353000" />
       <workItem from="1533798171081" duration="1796000" />
-      <workItem from="1533801479440" duration="7514000" />
+      <workItem from="1533801479440" duration="9492000" />
+      <workItem from="1533913435926" duration="1651000" />
+      <workItem from="1534151782052" duration="43000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32229000" />
+    <option name="totallyTimeSpent" value="35901000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="60" y="-11" width="1307" height="780" extended-state="6" />
@@ -206,7 +223,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="CMake" order="7" weight="0.32925472" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -214,7 +231,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32925472" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32925472" />
       <window_info anchor="right" id="Data View" order="3" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Messages" order="7" visible="true" weight="0.32925472" />
@@ -232,10 +249,78 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/main/simple_wifi.cpp">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3030">
+          <caret line="202" column="21" selection-start-line="202" selection-start-column="21" selection-end-line="202" selection-end-column="21" />
+          <folding>
+            <element signature="e#299#317#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/apa102.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/apa102.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6570">
+          <caret line="438" selection-start-line="438" selection-end-line="438" />
+          <folding>
+            <element signature="e#644#662#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="63" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simple_wifi.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3330">
+          <caret line="222" column="53" selection-start-line="222" selection-start-column="47" selection-end-line="222" selection-end-column="53" />
+          <folding>
+            <element signature="e#299#317#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/apa102.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/apa102.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6570">
+          <caret line="438" selection-start-line="438" selection-end-line="438" />
+          <folding>
+            <element signature="e#644#662#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="63" selection-start-line="31" selection-start-column="63" selection-end-line="31" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main/simple_wifi.cpp">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3210">
           <caret line="214" column="57" lean-forward="true" selection-start-line="214" selection-start-column="57" selection-end-line="214" selection-end-column="57" />
           <folding>
-            <element signature="e#299#318#0" expanded="true" />
+            <element signature="e#299#317#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -269,7 +354,7 @@
         <state relative-caret-position="3255">
           <caret line="217" column="18" selection-start-line="217" selection-start-column="18" selection-end-line="217" selection-end-column="18" />
           <folding>
-            <element signature="e#299#318#0" expanded="true" />
+            <element signature="e#299#317#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -303,7 +388,7 @@
         <state relative-caret-position="660">
           <caret line="44" column="35" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
           <folding>
-            <element signature="e#299#318#0" expanded="true" />
+            <element signature="e#299#317#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -402,10 +487,10 @@
     <entry file="file://$PROJECT_DIR$/../../../amaldo/esp/amaldo/simple_wifi/main/apa102.cpp" />
     <entry file="file://$PROJECT_DIR$/main/simple_wifi.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="232" column="60" selection-start-line="232" selection-start-column="60" selection-end-line="232" selection-end-column="60" />
+        <state relative-caret-position="705">
+          <caret line="230" column="30" lean-forward="true" selection-start-line="230" selection-start-column="30" selection-end-line="230" selection-end-column="30" />
           <folding>
-            <element signature="e#299#318#0" expanded="true" />
+            <element signature="e#299#317#0" expanded="true" />
           </folding>
         </state>
       </provider>
