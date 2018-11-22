@@ -53,7 +53,9 @@ public:
 	void ramdomBackStep(uint32_t loops, uint16_t delayms);
 	void ramdomBackStepR(uint32_t loops, uint16_t delayms);
 	void ramdomSingle(uint32_t loops, uint16_t delayms);
-	void test();
+    void ramdomStep_mnk(uint32_t loops, uint16_t delayms, uint16_t num);
+    void ramdomWalk_mnk(uint32_t loops, uint16_t delayms, uint16_t num, uint16_t intensity); // num is how many to light togather
+    void test();
 	void test2();
 	void white_w_brightness(uint8_t blevel);
 };
