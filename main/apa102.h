@@ -56,6 +56,8 @@ public:
     void ramdomStep_mnk(uint32_t loops, uint16_t delayms, uint16_t num);
     void ramdomStep_mnk_external(uint32_t loops, uint16_t delayms, uint16_t num);
     void ramdomStep_mnk_external_mod(uint32_t loops, uint16_t delayms, uint16_t num);
+    void ramdomStep_mnk_left_right_mod(uint32_t loops, uint16_t delayms);
+
 
     void ramdomWalk_mnk(uint32_t loops, uint16_t delayms, uint16_t num, uint16_t intensity); // num is how many to light togather
     void test();

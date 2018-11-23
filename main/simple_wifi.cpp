@@ -285,18 +285,16 @@ void white_w_brightness(apa102 &oAPA, uint8_t blevel) {
 
 static void apa102_task(void *pvParameters) {
     apa102 oAPA102(8);  //Number of LEDs in the chain
-   // oAPA102.ramdomBlink(500,300); // works -- random one blinks
-//    oAPA102.ramdomBackWalk(500,300), //single led lit, position rotates .. 1 missing
-//      oAPA102.ramdomWalk(500,300);  //single led rotate, all led works
-//    oAPA102.ramdomFade(500,300);
+
 //    oAPA102.test();
 //    oAPA102.test2();
-//    oAPA102.ramdomStepR(500,300);
+
     //oAPA102.ramdomStep_mnk(500,300,3);   //third param num has to be 0-7
 //    oAPA102.ramdomWalk_mnk(500,300,4,g_light_command);
     while(1) {
         global_intensity = g_light_command;
-        oAPA102.ramdomStep_mnk_external_mod(1,300,3);
+        oAPA102.ramdomStep_mnk_external_mod(1,200,5);
+//        oAPA102.ramdomStep_mnk_left_right_mod(1,300);
         vTaskDelay(250/portTICK_PERIOD_MS);
     }
 

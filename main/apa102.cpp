@@ -351,6 +351,38 @@ void apa102::ramdomStep_mnk_external_mod(uint32_t loops, uint16_t delayms, uint1
     }
 }
 
+void apa102::ramdomStep_mnk_left_right_mod(uint32_t loops, uint16_t delayms) {
+    colorRGBB RGB[ledcount];
+    int led_number=0;
+
+        for(uint16_t i = 0; i < 2; i++) {
+            for(uint16_t k = 0; k < ledcount; k++) { // setting all to zero
+                RGB[k].red=0;
+                RGB[k].green=0;
+                RGB[k].blue=0;
+                RGB[k].brightness=0;
+            }
+         if (led_number==0)
+            {led_number=4;
+            }
+            else if (led_number==4)
+         { led_number=0;
+         }
+
+
+
+                    RGB[led_number].red = global_intensity;
+                    RGB[led_number].green = global_intensity;
+                    RGB[led_number].blue = global_intensity;
+                    RGB[led_number].brightness = 31;
+
+            writeColors(RGB, ledcount);
+            vTaskDelay(delayms / portTICK_PERIOD_MS);
+        }
+
+
+}
+
 void apa102::ramdomBackWalk(uint32_t loops, uint16_t delayms) {
 	colorRGBB RGB[ledcount];
 
