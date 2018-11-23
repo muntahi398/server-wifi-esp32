@@ -292,8 +292,13 @@ static void apa102_task(void *pvParameters) {
 //    oAPA102.test();
 //    oAPA102.test2();
 //    oAPA102.ramdomStepR(500,300);
-//    oAPA102.ramdomStep_mnk(500,300,3);   //third param num has to be 0-7
-    oAPA102.ramdomWalk_mnk(500,300,4,g_light_command);
+    //oAPA102.ramdomStep_mnk(500,300,3);   //third param num has to be 0-7
+//    oAPA102.ramdomWalk_mnk(500,300,4,g_light_command);
+    while(1) {
+        global_intensity = g_light_command;
+        oAPA102.ramdomStep_mnk_external_mod(1,300,3);
+        vTaskDelay(250/portTICK_PERIOD_MS);
+    }
 
 
 

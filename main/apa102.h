@@ -18,7 +18,7 @@
 #define clockPin GPIO_NUM_22     // GPIO-PIN
 #define dataPin GPIO_NUM_23     // GPIO-PIN
 #define MAX_LEDS 8  // Number of APA102 LEDs in String
-
+extern int global_intensity  ;
 #include <stdlib.h>
 #include <stddef.h>
 #include <stdint.h>
@@ -54,6 +54,9 @@ public:
 	void ramdomBackStepR(uint32_t loops, uint16_t delayms);
 	void ramdomSingle(uint32_t loops, uint16_t delayms);
     void ramdomStep_mnk(uint32_t loops, uint16_t delayms, uint16_t num);
+    void ramdomStep_mnk_external(uint32_t loops, uint16_t delayms, uint16_t num);
+    void ramdomStep_mnk_external_mod(uint32_t loops, uint16_t delayms, uint16_t num);
+
     void ramdomWalk_mnk(uint32_t loops, uint16_t delayms, uint16_t num, uint16_t intensity); // num is how many to light togather
     void test();
 	void test2();

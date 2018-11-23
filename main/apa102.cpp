@@ -29,8 +29,10 @@
 
 #define HIGH 1
 #define LOW 0
-
+int global_intensity = 1;
 static const char *TAG = "APA102";
+//extern int global_intensity;
+
 
 apa102::apa102(uint32_t ledcount) {
 	setLEDCount(ledcount);
@@ -240,7 +242,7 @@ void apa102::ramdomWalk_mnk(uint32_t loops, uint16_t delayms, uint16_t num, uint
                 if((pos+j) <8 ){
                     led_number =pos+j;
                 } else
-                led_number = (pos+j)-7;
+                led_number = (pos+j)-ledcount;
                 RGB[led_number].red=intensity;
                 RGB[led_number].green=intensity;
                 RGB[led_number].blue=intensity;
@@ -267,7 +269,7 @@ void apa102::ramdomStep_mnk(uint32_t loops, uint16_t delayms, uint16_t num) {
                     if((i+j) <8 ){
                         led_number =i+j;
                     } else
-                    {led_number = i+j-7;}
+                    {led_number = i+j-ledcount;}
                     RGB[led_number].red = random(0, 255);
                     RGB[led_number].green = random(0, 255);
                     RGB[led_number].blue = random(0, 255);
@@ -277,6 +279,69 @@ void apa102::ramdomStep_mnk(uint32_t loops, uint16_t delayms, uint16_t num) {
                     RGB[i].green = 0;
                     RGB[i].blue = 0;
                     RGB[i].brightness = 0;
+                }
+            }
+            writeColors(RGB, ledcount);
+            vTaskDelay(delayms / portTICK_PERIOD_MS);
+        }
+
+    }
+}
+
+void apa102::ramdomStep_mnk_external(uint32_t loops, uint16_t delayms, uint16_t num) {
+    colorRGBB RGB[ledcount];
+    int led_number;
+
+    for(uint32_t pos = 0; pos < loops; pos++) {
+        for(uint16_t i = 0; i < ledcount; i++) {
+            for (uint16_t j = 0; j < num; j++) {
+                if (i <= (pos % (ledcount))) {
+                    int led_number=0;
+                    if((i+j) <8 ){
+                        led_number =i+j;
+                    } else
+                    {led_number = i+j-ledcount;}
+                    RGB[led_number].red = global_intensity;
+                    RGB[led_number].green = global_intensity;
+                    RGB[led_number].blue = global_intensity;
+                    RGB[led_number].brightness = 31;
+                } else {
+                    RGB[i].red = 0;
+                    RGB[i].green = 0;
+                    RGB[i].blue = 0;
+                    RGB[i].brightness = 0;
+                }
+            }
+            writeColors(RGB, ledcount);
+            vTaskDelay(delayms / portTICK_PERIOD_MS);
+        }
+
+    }
+}
+
+void apa102::ramdomStep_mnk_external_mod(uint32_t loops, uint16_t delayms, uint16_t num) {
+    colorRGBB RGB[ledcount];
+    int led_number;
+
+    for(uint32_t pos = 0; pos < loops; pos++) {
+        for(uint16_t i = 0; i < ledcount; i++) {
+            for(uint16_t k = 0; k < ledcount; k++) { // setting all to zero
+                RGB[k].red=0;
+                RGB[k].green=0;
+                RGB[k].blue=0;
+                RGB[k].brightness=0;
+            }
+            for (uint16_t j = 0; j < num; j++) {
+                 {
+                    int led_number=0;
+                    if((i+j) <8 ){
+                        led_number =i+j;
+                    } else
+                    {led_number = i+j-ledcount;}
+                    RGB[led_number].red = global_intensity;
+                    RGB[led_number].green = global_intensity;
+                    RGB[led_number].blue = global_intensity;
+                    RGB[led_number].brightness = 31;
                 }
             }
             writeColors(RGB, ledcount);
