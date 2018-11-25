@@ -354,6 +354,13 @@ void apa102::ramdomStep_mnk_external_mod(uint32_t loops, uint16_t delayms, uint1
 void apa102::ramdomStep_mnk_left_right_mod(uint32_t loops, uint16_t delayms) {
     colorRGBB RGB[ledcount];
     int led_number=0;
+    int pattern[4][3] =
+						 {
+								 {7,0,1}, // row 0
+								 { 3,4,5}, // row 1
+								 { 1,2,3}, // row 2
+								 {5,6,7}
+						 };
 
         for(uint16_t i = 0; i < 2; i++) {
             for(uint16_t k = 0; k < ledcount; k++) { // setting all to zero
@@ -380,6 +387,56 @@ void apa102::ramdomStep_mnk_left_right_mod(uint32_t loops, uint16_t delayms) {
             vTaskDelay(delayms / portTICK_PERIOD_MS);
         }
 
+
+}
+
+void apa102::ramdomStep_mnk_lr_ud_mod(uint32_t loops, uint16_t delayms) {
+	colorRGBB RGB[ledcount];
+	int led_number=0;
+//	int pattern[4][3] =
+//			{
+//					{7,0,1}, // top
+//					{ 3,4,5}, // bottom
+//					{ 1,2,3}, // left
+//					{5,6,7}  //right
+//			};
+    int pattern[4][3] =
+            {
+                    {0,1}, // top
+                    {4,5}, // bottom
+                    {2,3}, // left
+                    {6,7}  //right
+            };
+	int pat_row = sizeof pattern / sizeof pattern[0];
+	int pat_col = sizeof pattern[0]/ sizeof(int);
+
+		for(uint16_t rr=0; rr<pat_row; rr++){
+
+				for (uint16_t k = 0; k < ledcount; k++) { // setting all to zero
+					RGB[k].red = 0;
+					RGB[k].green = 0;
+					RGB[k].blue = 0;
+					RGB[k].brightness = 0;
+				}
+
+
+			for(uint16_t cc=0; cc<pat_col; cc++)
+			{	RGB[pattern[rr][cc]].red = global_intensity;
+				RGB[pattern[rr][cc]].green = global_intensity;
+				RGB[pattern[rr][cc]].blue = global_intensity;
+				RGB[pattern[rr][cc]].brightness = 31;
+			}
+			writeColors(RGB, ledcount);
+			vTaskDelay(delayms / portTICK_PERIOD_MS);
+		}
+    for (uint16_t k = 0; k < ledcount; k++) { // setting all to zero
+        RGB[k].red = 0;
+        RGB[k].green = 0;
+        RGB[k].blue = 0;
+        RGB[k].brightness = 0;
+    }
+    writeColors(RGB, ledcount);
+    vTaskDelay(delayms / portTICK_PERIOD_MS);
 
 }
 
